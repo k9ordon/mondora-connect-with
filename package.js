@@ -1,8 +1,8 @@
 Package.describe({
-	name: "mondora:connect-with",
-	summary: "Connect other oauth accounts with an existing one",
+	name: "mondora:connect-with-k9ordon",
+	summary: "Connect other oauth accounts with an existing one - k9ordon fork",
 	version: "0.1.2",
-	git: "https://github.com/mondora/mondora-connect-with.git"
+	git: "https://github.com/k9ordon/mondora-connect-with-k9ordon.git"
 });
 
 Package.onUse(function (api) {

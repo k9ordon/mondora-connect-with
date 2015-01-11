@@ -29,13 +29,13 @@ var makePascalCased = function (word) {
 	return word[0].toUpperCase() + word.slice(1).toLowerCase();
 };
 
-Meteor.connectWith = function (service, options, callback) {
+Meteor.connectWith = function (servicePackage, serviceName, options, callback) {
 	// Support a callback without options
 	if (!callback && typeof options === "function") {
 		callback = options;
 		options = null;
 	}
 	var connectCredentialRequestCompleteCallback = Accounts.oauth.connectCredentialRequestCompleteHandler(callback);
-	var Service = Package[service][makePascalCased(service)];
+	var Service = Package[servicePackage][serviceName || makePascalCased(servicePackage)];
 	Service.requestCredential(options, connectCredentialRequestCompleteCallback);
 };
